@@ -1,23 +1,23 @@
 import { View, ActivityIndicator, StyleSheet, Text} from "react-native"; 
-import { COLOR, SPACING, FONT_SIZE, COLORS } from "../../constants/theme";
+import { COLORS, SPACING, FONT_SIZE } from "../../constants/theme";
 
-export const LoadingSpinner = () => {
+export const LoadingSpinner = () => (
     <View>
         <ActivityIndicator size="large" color={COLORS.primary} />
     </View>
-}; 
+); 
 
 export const EmptyState = ({message = "No hay datos disponibles"}) => (
-    <View style={StyleSheet.center}>
-        <Text style={StyleSheet.emptyText}></Text>
+    <View style={styles.center}>
+        <Text style={styles.emptyText}>{message}</Text>
     </View>
 ); 
 
-export const Card = ({ children, style}) => {
+export const Card = ({ children, style}) => (
     <View style={[styles.card, style]}>
         {children}
     </View>
-}
+);
 
 const styles = StyleSheet.create({
     center: {

@@ -1,20 +1,20 @@
-import { TextInput, View, Text, StyleSheet } from "react-native";
-import { COLORS, SPACING, FONT_SIZE } from "../../constants/theme";
-
-const Input = ({ label, error, ...props}) => {
+import {View, TextInput, Text, StyleSheet} from 'react-native';
+import {COLORS, SPACING, FONT_SIZE} from '../../constants/theme';
+ 
+const Input= ({label, error, ...props}) => {
     return (
-        <View style={style.container}>
-            {label && <Text style={style.label}>{label}</Text>}
+        <View style={styles.container}>
+            {label && <Text style={styles.label}>{label}</Text>}
             <TextInput
-                style={[style.input, error && styles.inputError]}
+                style={[styles.input, error && styles.inputError]}
                 placeholderTextColor={COLORS.secondary}
                 {...props}
             />
-            {error && }
+            {error && <Text style={styles.error}>{error}</Text>}
         </View>
     )
 }
-
+ 
 const styles = StyleSheet.create({
     container: {
         marginBottom: SPACING.md,
@@ -46,3 +46,4 @@ const styles = StyleSheet.create({
     },
 });
  
+export default Input; 
